@@ -117,8 +117,10 @@ def compute_population_score(m,k,population_ideal,population_data,districting):
 
 def compute_compactness_score(m,k,area_data,perimeter_data,districting,conflicted_edges):
     #ToDo
+    for district in districting:
+        area = 1
+        perimeter = 1
     return 0
-
 
 def get_area_data(m,file):
     area_data=np.zeros(m)
@@ -163,11 +165,11 @@ if __name__ == '__main__':
     m_primal=len(G_primal.nodes()) #number of nodes in the path graph
     #m_primal=40 #for squares_graph example
     pop_ideal=m/float(k)
+#    edge_map_0=create_edge_map(0,m_primal,example_file)
+#    edge_map_1=create_edge_map(1,m_primal,example_file)
+
     edge_map_0=create_edge_map(0,m_primal,example_file)
     edge_map_1=create_edge_map(1,m_primal,example_file)
-
-#    edge_map_0=create_edge_map_txt(0,m_primal,example_file)
-#    edge_map_1=create_edge_map_txt(1,m_primal,example_file)
 
     #population_data=get_population_data(m,r"C:\DATA\Exhaust\exhausting_splits-master\exhausting_splits-master\simple_graph_population.csv")
     #area_data=get_area_data(m,"C:\DATA\Exhaust\exhausting_splits-master\exhausting_splits-master\simple_graph_area.csv")
@@ -175,8 +177,10 @@ if __name__ == '__main__':
     #population_total=sum(population_data)
     #population_ideal=population_total/float(k)
 
-    boundary_nodes_primal=[0,1,2,3,4] #making a list of nodes - if shape changes, this needs to be hard-coded in - we need to know how many
-    boundary_nodes_primal=['011','012','020','028','035','041','047','046','038','030','023','017','011']
+    #simple boundary nodes
+    # boundary_nodes_primal=[0,1,2,3,4] #making a list of nodes - if shape changes, this needs to be hard-coded in - we need to know how many
+    #simple2 boundary nodes
+    boundary_nodes_primal=[9,15,10,11,13,14,9,5,4,17,16,2,9]
 
 
     districtings=[]
