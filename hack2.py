@@ -148,7 +148,7 @@ def get_perimeter_data(m_primal,file):
 
 if __name__ == '__main__':
     k=2
-    example_file=r"C:\DATA\Exhaust\exhausting_splits-master\exhausting_splits-master\simple2_graph_edge_map.csv"
+    example_file=r"simple2_graph_edge_map.csv"
     G_dual=create_graph(0,example_file) #adjacency map (blue map)
     G_primal=create_graph(1,example_file) #primal = drawing paths (black map)
     nx.draw(G_dual)
@@ -180,7 +180,7 @@ if __name__ == '__main__':
     #simple boundary nodes
     # boundary_nodes_primal=[0,1,2,3,4] #making a list of nodes - if shape changes, this needs to be hard-coded in - we need to know how many
     #simple2 boundary nodes
-    boundary_nodes_primal=[9,15,10,11,13,14,9,5,4,17,16,2,9]
+    boundary_nodes_primal=[0,1,5,11,17,21,23,22,18,12,6,2,0]
 
 
     districtings=[]
